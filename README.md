@@ -108,7 +108,7 @@ Stores metadata such as:
 - Project: 30%
 - Midterm: 20%
 
-  | Grade  | % Range |
+| Grade  | % Range |
 |--------|---------|
 | A      | >= 90   |
 | B+     | 85-89   |
