@@ -117,3 +117,4 @@ Stores metadata such as:
 | C      | 70-74   |
 | F      | < 70    |
 
+---
