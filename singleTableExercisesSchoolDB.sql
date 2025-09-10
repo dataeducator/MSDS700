@@ -1,0 +1,35 @@
+-- List the first and last name of all the teachers.
+-- Find all the records where the teacher ID is greater than 5.
+-- Show only the first names and last names of all teachers.
+-- Find all teachers who specialize in Maths.
+-- Show the names and salaries of teachers who earn more than 5000.
+-- show how many teachers there are for each specialization.
+-- Find the highest salary among all teachers.
+-- Show the names of all schools located in Amherst.
+-- Count how many times school number 1 appears in the teaches_at table.
+-- List all teacher IDs without duplicates.
+-- List all teachers in alphabetical order by last name (in descending then ascending orders).
+-- Display the highest, lowest, average, and sum of all teachers salaries use the appropriate alias for the column names.
+-- Display number of schools in ynchburg.
+-- Display the number of schools organized by types (private, magnet, etc.).
+-- Display the fname, lname and salary of teachers whose first name start with the letters A or E.
+-- Display the last name of the teachers whose salary is between 1500 and 3500.
+-- Display all teachers who do not specialize in “Maths.”
+-- Find all teachers whose last starts with “Mar”.
+-- Find all teachers whose first name begins with the letter "E"
+-- Display the first and last name of the teacher(s) with the lowest salary.
+-- Find the average opening year of all schools.
+-- Display all teachers sorted by their recruitment date, starting from the oldest.
+-- show the first and last names of the teachers who earn more than the average.
+-- Count how many teachers belong to each specialization.
+-- Find the average salary of teachers in each specialization.
+-- For each last name, count how many teachers share that last name.
+-- Show the earliest recruitment date for each specialization.
+-- Find the maximum salary within each specialization.
+-- Group teachers by first name and count how many teachers have the same first name.
+-- For each specialization, display the total sum of salaries.
+-- Count how many teachers were recruited in each year.
+-- Find specializations that have more than 2 teachers.
+-- Show the specializations where the average salary is greater than 2000.
+-- Find last names that appear for more than 1 teacher.
+-- List specializations where the highest salary is greater than 5000.

@@ -1,0 +1,10 @@
+-- Find the names of teachers who earn more than the average salary of all teachers.
+-- List the names of schools where the number of teachers is greater than 2.
+-- Find the first and last name of the teacher(s) who earn the highest salary in the "Maths" specialization.
+-- Show the names of schools that have been open longer than the average opening year of all schools.
+-- List the first and last names of teachers who have been recruited after the teacher with the lowest salary in the "History" specialization.
+-- Find all teachers who specialize in "Literature" and earn more than the average salary of all "Literature" teachers.
+-- Find the last name of teachers who earn a salary greater than the highest salary in the "Philosophy" specialization.
+-- Display the names of schools where a teacher who specializes in "History" teaches.
+-- Find the name and city of the school with the earliest opening year among private schools.
+-- Show the names of teachers who are teaching at the same school as the teacher with ID 3.
