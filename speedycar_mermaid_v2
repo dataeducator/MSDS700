@@ -1,0 +1,115 @@
+erDiagram
+    %% =====================================================
+    %% SpeedyCar Rentals - ER Diagram (MySQL Style)
+    %% Using snake_case naming convention to match SQL standards
+    %% =====================================================
+    
+    customer {
+        int customer_id PK "AUTO_INCREMENT"
+        varchar first_name "NOT NULL"
+        varchar last_name "NOT NULL"
+        varchar email "NOT NULL, UNIQUE"
+        varchar phone
+        varchar address
+        varchar driver_license_number "NOT NULL, UNIQUE"
+        date license_expiry_date "NOT NULL"
+    }
+    
+    branch {
+        int branch_id PK "AUTO_INCREMENT"
+        varchar branch_name "NOT NULL"
+        varchar address "NOT NULL"
+        varchar city "NOT NULL"
+        varchar phone "NOT NULL"
+    }
+    
+    car {
+        int car_id PK "AUTO_INCREMENT"
+        int branch_id FK "NOT NULL"
+        varchar license_plate "NOT NULL, UNIQUE"
+        varchar make "NOT NULL"
+        varchar model "NOT NULL"
+        int year "NOT NULL"
+        varchar color
+        decimal daily_rate "NOT NULL"
+        varchar status "NOT NULL, DEFAULT available"
+    }
+    
+    booking {
+        int booking_id PK "AUTO_INCREMENT"
+        int customer_id FK "NOT NULL"
+        int car_id FK "NOT NULL"
+        date start_date "NOT NULL"
+        date end_date "NOT NULL"
+        varchar booking_status "NOT NULL, DEFAULT confirmed"
+    }
+    
+    service {
+        int service_id PK "AUTO_INCREMENT"
+        varchar service_name "NOT NULL, UNIQUE"
+        text service_description
+        decimal service_price "NOT NULL"
+    }
+    
+    booking_service {
+        int booking_id PK "FK"
+        int service_id PK "FK"
+        int quantity "NOT NULL, DEFAULT 1"
+    }
+    
+    mechanic {
+        int mechanic_id PK "AUTO_INCREMENT"
+        varchar first_name "NOT NULL"
+        varchar last_name "NOT NULL"
+        varchar specialization
+        varchar phone
+    }
+    
+    maintenance {
+        int maintenance_id PK "AUTO_INCREMENT"
+        int car_id FK "NOT NULL"
+        int mechanic_id FK "NOT NULL"
+        date maintenance_date "NOT NULL"
+        text description "NOT NULL"
+        decimal cost "NOT NULL"
+    }
+    
+    payment {
+        int payment_id PK "AUTO_INCREMENT"
+        int booking_id FK "NOT NULL, UNIQUE"
+        date payment_date "NOT NULL"
+        decimal amount "NOT NULL"
+        varchar payment_method "NOT NULL"
+    }
+    
+    %% =====================================================
+    %% Relationships (1:N and 1:1)
+    %% =====================================================
+    
+    %% Customer makes many bookings
+    customer ||--o{ booking : "makes"
+    
+    %% Branch has many cars
+    branch ||--o{ car : "has"
+    
+    %% Car appears in many bookings
+    car ||--o{ booking : "rented_in"
+    
+    %% Booking has exactly one payment
+    booking ||--|| payment : "has"
+    
+    %% Car undergoes many maintenance operations
+    car ||--o{ maintenance : "undergoes"
+    
+    %% Mechanic performs many maintenance tasks
+    mechanic ||--o{ maintenance : "performs"
+    
+    %% =====================================================
+    %% Many-to-Many Relationship (via Junction Table)
+    %% =====================================================
+    
+    %% Booking includes many services (via booking_service)
+    booking ||--o{ booking_service : "includes"
+    
+    %% Service appears in many bookings (via booking_service)
+    service ||--o{ booking_service : "used_in"
